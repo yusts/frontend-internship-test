@@ -17,19 +17,61 @@ body {
   min-height: 100vh;
 }
 
-.btn-main {
-  appearance: none;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  font-family: 'Lobster', cursive;
-  font-size: 42px;
-  height: 60px;
-  outline: none;
-  padding: 0 20px;
-  transition: transform .5s ease;
+.container {
+  padding: 35px;
+}
 
-  &:hover {
-    transform: scale(1.15);
+.btn {
+  cursor: pointer;
+  border: 0;
+  outline: none;
+
+  &-main {
+    appearance: none;
+    background: transparent;
+    font-family: 'Lobster', cursive;
+    font-size: 42px;
+    height: 60px;
+    padding: 0 20px;
+    transition: transform .5s ease;
+  
+    &:hover {
+      transform: scale(1.15);
+    }
   }
+
+  &-close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 26px;
+    line-height: 26px;
+  }
+  
+  &-submit {
+    background-color: #000000;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    margin-top: 25px;
+    width: 100%;
+  }
+}
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+
+  &::placeholder {
+    font-size: 12px;
+  }
+}
+
+input[type=password] {
+  margin-bottom: 15px;
 }

@@ -1,2 +1,33 @@
 // Here goes your CSS
 @import 'layout/main';
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.login-form {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fefefe;
+  border-radius: 5px;
+  width: 275px;
+
+  &-header {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    font-size: 25px;
+    margin: 10px 0;
+  }
+
+  &-agree {
+    font-size: 14px;
+  }
+}
