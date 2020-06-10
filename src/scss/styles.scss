@@ -1,6 +1,7 @@
 // Here goes your CSS
 @import 'layout/main';
 
+/* Styling login form popup*/
 .popup {
   display: none;
   position: fixed;
@@ -11,6 +12,7 @@
   height: 100%;
 }
 
+/* Styles for login form*/
 .login-form {
   transform: translate(-50%, -50%);
   position: absolute;
@@ -26,8 +28,56 @@
     font-size: 25px;
     margin: 10px 0;
   }
+}
 
-  &-agree {
-    font-size: 14px;
+/*Adding custom checkbox agreement*/
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 27px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+
+  /* Hide the browser's default checkbox */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    /* Show the custom-checkbox-checkmark when checked */
+    &:checked~.custom-checkbox-checkmark:after {
+      display: block;
+    }
+  }
+
+  /* Create a custom checkbox */
+  &-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    border: 1px solid;
+
+    /* Create the custom-checkbox-checkmark/indicator (hidden when not checked) */
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+  /* Style the custom-checkbox-checkmark/indicator */
+  .custom-checkbox-checkmark:after {
+    left: 5px;
+    top: 0px;
+    width: 5px;
+    height: 11px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
   }
 }

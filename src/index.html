@@ -20,15 +20,15 @@
   <div class="popup" id="popup">
     <!-- Here goes your popup form HTML code -->
 
-    <form action="" class="login-form">
+    <form name="loginform" class="login-form" id="login-form">
       <div class="container">
-        <div class="login-form-header">
-          Login
-        </div>
-        <input type="text" placeholder="E-mail" required>
-        <input type="password" placeholder="Password" required>
-        <label class="login-form-agree">
-          <input type="checkbox" name="agreement" class="input-agree"> I agree to terms & conditions.
+        <div class="login-form-header">Login</div>
+        <input type="text" placeholder="E-mail" name="email">
+        <input type="password" placeholder="Password" name="password"
+          title="Must contain at least one numeric digit, one uppercase and one lowercase letter, and at least 8 or more characters">
+        <label class="custom-checkbox">I agree to terms & conditions.
+          <input type="checkbox" name="agree" id="checkbox-agree">
+          <span class="custom-checkbox-checkmark"></span>
         </label>
         <button type="submit" class="btn btn-submit">Submit</button>
       </div>

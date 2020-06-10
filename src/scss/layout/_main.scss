@@ -9,55 +9,7 @@ body {
   padding: 0;
 }
 
-.main {
-  align-items: center;
-  background: linear-gradient(-45deg, $primary-color 0%, $secondary-color 100%);
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.container {
-  padding: 35px;
-}
-
-.btn {
-  cursor: pointer;
-  border: 0;
-  outline: none;
-
-  &-main {
-    appearance: none;
-    background: transparent;
-    font-family: 'Lobster', cursive;
-    font-size: 42px;
-    height: 60px;
-    padding: 0 20px;
-    transition: transform .5s ease;
-  
-    &:hover {
-      transform: scale(1.15);
-    }
-  }
-
-  &-close {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    font-size: 26px;
-    line-height: 26px;
-  }
-  
-  &-submit {
-    background-color: #000000;
-    color: #ffffff;
-    text-transform: uppercase;
-    padding: 15px 20px;
-    margin-top: 25px;
-    width: 100%;
-  }
-}
-
+/* Styles for all inputs */
 input[type=text],
 input[type=password] {
   width: 100%;
@@ -74,4 +26,65 @@ input[type=password] {
 
 input[type=password] {
   margin-bottom: 15px;
+}
+
+/* Styles for section='main' */
+.main {
+  align-items: center;
+  background: linear-gradient(-45deg, $primary-color 0%, $secondary-color 100%);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+
+}
+
+.container {
+  padding: 35px;
+}
+
+/* Styles for buttons*/
+.btn {
+  cursor: pointer;
+  border: 0;
+  outline: none;
+
+  /* Styles for Click Me btn*/
+  &-main {
+    appearance: none;
+    background: transparent;
+    font-family: 'Lobster', cursive;
+    font-size: 42px;
+    height: 60px;
+    padding: 0 20px;
+    transition: transform .5s ease;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+
+  /* Styles for Close btn in login form*/
+  &-close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+  /* Styles for Submit btn in login form*/
+  &-submit {
+    background-color: #000000;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    margin-top: 25px;
+    width: 100%;
+    transition: background-color .3s;
+
+    /* Adding hover effect */
+    &:hover {
+      background-color: #FC888E;
+    }
+  }
 }
