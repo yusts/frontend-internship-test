@@ -36,6 +36,59 @@ input[type=password] {
   justify-content: center;
   min-height: 100vh;
 
+  /* Adding styling for message after successful login */
+  &-message {
+    display: none;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+  }
+
+  /* Adding styling for loader element after successful login*/
+  &-loading {
+    display: none;
+    font-family: 'Lobster', cursive;
+    font-size: 32px;
+    z-index: 100;
+    position: fixed;
+    top: 10%;
+
+    /* Styling loader element with animated dots*/
+    &:after {
+      content: ' .';
+      animation: dots 1s steps(5, end) infinite;
+    }
+  }
+
+  @keyframes dots {
+
+    0%,
+    20% {
+      color: rgba(0, 0, 0, 0);
+      text-shadow:
+        .25em 0 0 rgba(0, 0, 0, 0),
+        .5em 0 0 rgba(0, 0, 0, 0);
+    }
+
+    40% {
+      color: black;
+      text-shadow:
+        .25em 0 0 rgba(0, 0, 0, 0),
+        .5em 0 0 rgba(0, 0, 0, 0);
+    }
+
+    60% {
+      text-shadow:
+        .25em 0 0 black,
+        .5em 0 0 rgba(0, 0, 0, 0);
+    }
+
+    80%,
+    100% {
+      text-shadow:
+        .25em 0 0 black,
+        .5em 0 0 black;
+    }
+  }
 }
 
 .container {
