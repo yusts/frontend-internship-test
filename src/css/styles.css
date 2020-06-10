@@ -1,0 +1,264 @@
+html,
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for all inputs */
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input[type=text]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+input[type=text]:-ms-input-placeholder,
+input[type=password]:-ms-input-placeholder {
+  font-size: 12px;
+}
+
+input[type=text]::-ms-input-placeholder,
+input[type=password]::-ms-input-placeholder {
+  font-size: 12px;
+}
+
+input[type=text]::placeholder,
+input[type=password]::placeholder {
+  font-size: 12px;
+}
+
+input[type=password] {
+  margin-bottom: 15px;
+}
+
+/* Styles for section='main' */
+.main {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: linear-gradient(-45deg, #fcaf32 0%, #fc888e 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  /* Adding styling for message after successful login */
+  /* Adding styling for loader element after successful login*/
+}
+
+.main-message {
+  display: none;
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+}
+
+.main-loading {
+  display: none;
+  font-family: 'Lobster', cursive;
+  font-size: 32px;
+  z-index: 100;
+  position: fixed;
+  top: 10%;
+  /* Styling loader element with animated dots*/
+}
+
+.main-loading:after {
+  content: ' .';
+  -webkit-animation: dots 1s steps(5, end) infinite;
+          animation: dots 1s steps(5, end) infinite;
+}
+
+@-webkit-keyframes dots {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: black;
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 black, 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%,
+  100% {
+    text-shadow: .25em 0 0 black, .5em 0 0 black;
+  }
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: black;
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 black, 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%,
+  100% {
+    text-shadow: .25em 0 0 black, .5em 0 0 black;
+  }
+}
+
+.container {
+  padding: 35px;
+}
+
+/* Styles for buttons*/
+.btn {
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  /* Styles for Click Me btn*/
+  /* Styles for Close btn in login form*/
+  /* Styles for Submit btn in login form*/
+}
+
+.btn-main {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  font-family: 'Lobster', cursive;
+  font-size: 42px;
+  height: 60px;
+  padding: 0 20px;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
+.btn-main:hover {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.btn-close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 26px;
+  line-height: 26px;
+}
+
+.btn-submit {
+  background-color: #000000;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  margin-top: 25px;
+  width: 100%;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  /* Adding hover effect */
+}
+
+.btn-submit:hover {
+  background-color: #FC888E;
+}
+
+/* Styling login form popup*/
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Styles for login form*/
+.login-form {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fefefe;
+  border-radius: 5px;
+  width: 275px;
+}
+
+.login-form-header {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+/*Adding custom checkbox agreement*/
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 27px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* Style the custom-checkbox-checkmark/indicator */
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  /* Show the custom-checkbox-checkmark when checked */
+}
+
+.custom-checkbox input:checked ~ .custom-checkbox-checkmark:after {
+  display: block;
+}
+
+.custom-checkbox-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  border: 1px solid;
+  /* Create the custom-checkbox-checkmark/indicator (hidden when not checked) */
+}
+
+.custom-checkbox-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox .custom-checkbox-checkmark:after {
+  left: 5px;
+  top: 0px;
+  width: 5px;
+  height: 11px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+/*# sourceMappingURL=styles.css.map */
